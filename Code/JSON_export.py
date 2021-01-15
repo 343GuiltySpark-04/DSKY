@@ -1,7 +1,7 @@
 import json
 import time
 import serial
-
+import os
 stringToSend = ""
 
 startMarker = "<"
@@ -9,7 +9,7 @@ endMarker = ">"
 ser = serial.Serial(
 
 
-    port='COM3',
+    port='COM3 (EDIT INTO CORRECT PORT, REMOVE THIS)',
     baudrate=9600,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
@@ -27,7 +27,7 @@ def sendToArduino(stringToSend):
 
 
 while True:
-    with open('C:\\Users\\Gebruiker\\AppData\\LocalLow\\Wilhelmsen Studios\\ReEntry\\Export\\Apollo\\outputAGC.json', 'r') as AGC:
+    with open(os.getenv('APPDATA')+ '..\\LocalLow\\Wilhelmsen Studios\\ReEntry\\Export\\Apollo\\outputAGC.json', 'r') as AGC:
         jsonData = AGC.read()
         jsonObj = json.loads(jsonData)
 
