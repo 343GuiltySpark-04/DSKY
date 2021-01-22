@@ -9,7 +9,7 @@ endMarker = ">"
 ser = serial.Serial(
 
 
-    port='COM3 (EDIT INTO CORRECT PORT, REMOVE THIS)',
+    port='COM3',
     baudrate=9600,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
@@ -27,7 +27,7 @@ def sendToArduino(stringToSend):
 
 
 while True:
-    with open(os.getenv('APPDATA')+ '..\\LocalLow\\Wilhelmsen Studios\\ReEntry\\Export\\Apollo\\outputAGC.json', 'r') as AGC:
+    with open(os.getenv('APPDATA')+ '\\..\\LocalLow\\Wilhelmsen Studios\\ReEntry\\Export\\Apollo\\outputAGC.json', 'r') as AGC:
         jsonData = AGC.read()
         jsonObj = json.loads(jsonData)
 
@@ -53,7 +53,7 @@ while True:
         R3D4 = str(jsonObj['Register3D4'])
         R3D5 = str(jsonObj['Register3D5'])
 
-        sendToArduino(R1D5+R1D4+R1D3+R1D2+R1D1)
+        sendToArduino(R1D1+R1D2+R1D3+R1D4+R1D5)
 
 
         time.sleep(0.5)
