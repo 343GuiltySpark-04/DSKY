@@ -1136,6 +1136,7 @@ W = angled&lt;p&gt;
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="SV1" library="con-lsta" library_urn="urn:adsk.eagle:library:161" deviceset="FE06-1" device="" package3d_urn="urn:adsk.eagle:package:8191/1"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1171,6 +1172,9 @@ W = angled&lt;p&gt;
 </instance>
 <instance part="GND1" gate="1" x="-12.7" y="-43.18" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-10.16" y="-45.72" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND2" gate="1" x="109.22" y="-71.12" smashed="yes" rot="R180">
+<attribute name="VALUE" x="111.76" y="-68.58" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -1502,6 +1506,16 @@ W = angled&lt;p&gt;
 <pinref part="SV1" gate="G$1" pin="1"/>
 <wire x1="-15.24" y1="-43.18" x2="-22.86" y2="-43.18" width="0.1524" layer="91"/>
 <junction x="-22.86" y="-43.18"/>
+</segment>
+<segment>
+<pinref part="D1" gate="G$1" pin="CK1"/>
+<wire x1="99.06" y1="-78.74" x2="109.22" y2="-78.74" width="0.1524" layer="91"/>
+<pinref part="D1" gate="G$1" pin="CK2"/>
+<wire x1="99.06" y1="-81.28" x2="109.22" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-81.28" x2="109.22" y2="-78.74" width="0.1524" layer="91"/>
+<junction x="109.22" y="-78.74"/>
+<wire x1="109.22" y1="-78.74" x2="109.22" y2="-73.66" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
 </segment>
 </net>
 </nets>
